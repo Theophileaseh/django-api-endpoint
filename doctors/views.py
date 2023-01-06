@@ -22,3 +22,20 @@ def doctor_list(request):
     if serializer.is_valid():
       serializer.save()
       return Response(serializer.data, status = status.HTTP_201_CREATED)
+
+@api_view(['GET', 'PUT', 'DELETE'])
+def doctor_detail(request, id):
+
+  try:
+    doctor = Doctor.objects.get(pk=id)
+  except Doctor.DoesNotExist:
+    return Response(status = status.HTTP_201_CREATED)
+
+  if request.method == 'GET':
+    serializer = DoctorSerializer(doctor)
+    return Response(serializer.data)
+  elif request.method == 'PUT':
+    pass
+  elif request.method == 'DELETE':
+    pass
+
