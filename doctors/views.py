@@ -15,7 +15,10 @@ def doctor_list(request):
   if request.method == 'GET':
     doctors = Doctor.objects.all()
     serializer = DoctorSerializer(doctors, many=True)
-    return JsonResponse(serializer.data, safe=False)
+    return Response(serializer.data)
+
+    # if you want to return just json data and not the html page with json use the code below in the place of Response()
+    # return JsonResponse(serializer.data, safe=False)
 
   if request.method == 'POST':
     serializer = DoctorSerializer(data = request.data)
