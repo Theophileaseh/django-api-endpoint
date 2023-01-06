@@ -4,10 +4,10 @@ from .serializers import DoctorSerializer
 
 def doctor_list(request):
 
-  #get all drinks
+  #get all doctors
   #serializer them
   #return json
 
   doctors = Doctor.objects.all()
-  serializer = DoctorSerializer(drinks, many=True)
-  return JsonResponse(serializer.data)
+  serializer = DoctorSerializer(doctors, many=True)
+  return JsonResponse(serializer.data, safe=False)
