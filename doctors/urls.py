@@ -19,6 +19,6 @@ from doctors import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('doctors/', views.doctor_list)
+    path('doctors/', views.doctor_list),
     path('doctors/<int:id>', views.doctor_detail)
 ]

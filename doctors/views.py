@@ -35,7 +35,11 @@ def doctor_detail(request, id):
     serializer = DoctorSerializer(doctor)
     return Response(serializer.data)
   elif request.method == 'PUT':
-    pass
+    serializer = DoctorSerializer(doctor, data = request.data)
+    if serializer.is_valid():
+      serializer.save()
+      return Response(serializer.data)
+    return Response(serializer.error, status = status.HTTP_400_BAD_REQUEST)
   elif request.method == 'DELETE':
     pass
 
