@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from rest_framework import status
 
 @api_view(['GET', 'POST'])
-def doctor_list(request):
+def doctor_list(request, format=None):
 
   #get all doctors
   #serializer them
@@ -27,7 +27,7 @@ def doctor_list(request):
       return Response(serializer.data, status = status.HTTP_201_CREATED)
 
 @api_view(['GET', 'PUT', 'DELETE'])
-def doctor_detail(request, id):
+def doctor_detail(request, id, format=None):
 
   try:
     doctor = Doctor.objects.get(pk=id)
