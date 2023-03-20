@@ -25,15 +25,6 @@ OPTIONAL SECTIONS:
 After you're finished please remove all the comments and instructions!
 -->
 
-<div align="center">
-  <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
-  <br/>
-
-  <h3><b>Microverse README Template</b></h3>
-
-</div>
-
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
@@ -175,7 +166,9 @@ To run the project, execute the following command:
 
 Access api json data through ```[your server url]/doctors.json ```
 
-Access single data through ```[your server url]/doctors/[doctor_id] ```
+Access single api json data through ```[your server url]/doctors/[doctor_id].json ```
+
+Access single  html view data through ```[your server url]/doctors/[doctor_id] ```
 
 Access html view data through ``` [your server url]/doctors ```
 
